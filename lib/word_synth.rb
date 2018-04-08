@@ -1,15 +1,15 @@
 class WordSynth
 
   def initialize
-    @proc_list = []
+    @effects = []
   end
 
-  def play(word)
-    @proc_list.inject(word) {|word, proc| proc.call(word)}
+  def play(words)
+    @effects.inject(words) {|words, effect| effect.call(words)}
   end
 
   def add_effect(effect)
-    @proc_list << effect
+    @effects << effect
   end
 
 end
